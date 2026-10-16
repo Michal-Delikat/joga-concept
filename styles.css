@@ -445,11 +445,6 @@ a:hover {
     font-size: 0.9rem;
 }
 
-.cta .privacy a {
-    color: var(--sand);
-    text-decoration: underline;
-}
-
 /* Footer */
 .site-footer {
     background-color: var(--chocolate);
