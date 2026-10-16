@@ -107,7 +107,7 @@ a:hover {
 
 .site-nav a {
     margin-left: 24px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 /* Hero */
@@ -149,12 +149,14 @@ a:hover {
 .hero h1 {
     font-size: 2.75rem;
     margin-bottom: 0;
+    color: var(--sand);
 }
 
 .hero p {
     max-width: 620px;
     margin: 0 auto;
     font-size: 1.15rem;
+    color: var(--sand);
 }
 
 /* Buttons */
@@ -164,7 +166,7 @@ a:hover {
     color: var(--chocolate);
     font-weight: 700;
     font-size: 1rem;
-    padding: 14px 34px;
+    padding: 10px 34px;
     border: none;
     border-radius: 999px;
     cursor: pointer;
@@ -201,16 +203,6 @@ a:hover {
 
 .section-subtitle--center {
     text-align: center;
-}
-
-.level {
-    margin-bottom: 48px;
-}
-
-.level h3 {
-    font-size: 1.85rem;
-    text-align: center;
-    margin-bottom: 36px;
 }
 
 .classes {
@@ -251,6 +243,23 @@ a:hover {
     opacity: 0.9;
 }
 
+.class-meta {
+    list-style: none;
+    margin-top: 16px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.class-meta li {
+    display: inline;
+}
+
+.class-meta li + li::before {
+    content: "•";
+    margin: 0 8px;
+    color: var(--salmon);
+}
+
 /* Schedule */
 .schedule-grid {
     display: grid;
@@ -267,11 +276,11 @@ a:hover {
 }
 
 .day-name {
-    background-color: var(--sand);
     color: var(--chocolate);
     font-family: "Fraunces", Georgia, serif;
     font-size: 1.15rem;
     padding: 14px 18px;
+    border-bottom: 1px solid var(--sand);
 }
 
 .day-classes {
@@ -319,6 +328,76 @@ a:hover {
 
 .about-body p + p {
     margin-top: 16px;
+}
+
+/* Pricing */
+.pricing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 48px;
+    text-align: center;
+}
+
+.price-card {
+    padding-top: 8px;
+}
+
+.price-name {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.price-amount {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.price-amount span {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+/* Dojazd */
+.dojazd {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.dojazd-info h3 {
+    font-size: 1.15rem;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.dojazd-info h3:first-child {
+    margin-top: 0;
+}
+
+.dojazd-info p {
+    font-size: 1rem;
+}
+
+.dojazd-info p + p {
+    margin-top: 16px;
+}
+
+.map-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 4 / 3;
+    background-color: var(--sand);
+    border: 1px solid var(--chocolate);
+    border-radius: 4px;
+    color: var(--chocolate);
+    font-size: 0.95rem;
 }
 
 /* CTA section */
@@ -408,6 +487,11 @@ a:hover {
         height: auto;
         max-width: 360px;
         margin: 0 auto;
+    }
+
+    .dojazd {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
     .nav-toggle {
