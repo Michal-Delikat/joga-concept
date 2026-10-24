@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         toggle.setAttribute("aria-expanded", "false");
     }
 
+    function updateHeader() {
+        header.classList.toggle("is-scrolled", window.scrollY > 24);
+    }
+
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
+
     toggle.addEventListener("click", function () {
         var isOpen = header.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
