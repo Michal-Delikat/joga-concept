@@ -345,7 +345,6 @@ a:hover {
 .classes {
     display: flex;
     flex-direction: column;
-    gap: 40px;
 }
 
 .class-row {
@@ -353,9 +352,19 @@ a:hover {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
     align-items: center;
-    background-color: var(--sand-light);
-    border-radius: 4px;
-    padding: 24px;
+    padding: 40px 0;
+}
+
+.class-row + .class-row {
+    border-top: 1px solid var(--sand);
+}
+
+.class-row:first-child {
+    padding-top: 0;
+}
+
+.class-row:last-child {
+    padding-bottom: 0;
 }
 
 .class-row:nth-child(even) .class-media {
@@ -400,47 +409,60 @@ a:hover {
 
 /* Schedule */
 .schedule-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 24px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.day {
+.schedule-head,
+.schedule-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) repeat(4, 72px);
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+}
+
+.schedule-head {
+    padding-top: 0;
+    padding-bottom: 4px;
+    color: rgba(59, 42, 38, 0.6);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.schedule-head-name {
+    text-align: left;
+}
+
+.schedule-row {
     background-color: var(--bg);
     border: 1px solid var(--sand);
     border-radius: 8px;
-    overflow: hidden;
 }
 
-.day-name {
+.schedule-name {
+    max-width: 8em;
     color: var(--chocolate);
     font-family: "Cormorant Garamond", Georgia, serif;
     font-size: 1.3rem;
     font-weight: 600;
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--sand);
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
-.day-classes {
-    list-style: none;
-}
-
-.day-classes li {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 12px 18px;
-    border-bottom: 1px solid var(--sand);
-}
-
-.day-classes li:last-child {
-    border-bottom: none;
-}
-
-.time {
-    font-weight: 700;
+.slot {
+    font-size: 0.95rem;
+    text-align: center;
     white-space: nowrap;
+}
+
+.slot--empty {
+    color: rgba(59, 42, 38, 0.25);
 }
 
 /* About */
@@ -669,6 +691,25 @@ a:hover {
     .dojazd {
         grid-template-columns: 1fr;
         gap: 28px;
+    }
+
+    .schedule-head,
+    .schedule-row {
+        grid-template-columns: minmax(0, 1fr) repeat(4, 40px);
+        gap: 4px;
+        padding: 14px;
+    }
+
+    .schedule-head {
+        padding-top: 0;
+    }
+
+    .schedule-name {
+        font-size: 1rem;
+    }
+
+    .slot {
+        font-size: 0.85rem;
     }
 
     .nav-toggle {
