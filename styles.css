@@ -273,9 +273,9 @@ a:hover {
 }
 
 .hero-link:hover {
-    background-color: rgba(246, 237, 228, 0.1);
-    color: var(--salmon);
-    border-color: var(--salmon);
+    background-color: var(--sand);
+    color: var(--chocolate);
+    border-color: var(--sand);
     opacity: 1;
 }
 
