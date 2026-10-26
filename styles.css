@@ -603,6 +603,15 @@ a:hover {
     font-size: 0.9rem;
 }
 
+.privacy-link {
+    text-decoration: underline;
+    cursor: default;
+}
+
+.privacy-link:hover {
+    opacity: 1;
+}
+
 /* Footer */
 .site-footer {
     background-color: var(--chocolate);
