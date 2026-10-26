@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeMenu() {
         header.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("nav-open");
+    }
+
+    function openMenu() {
+        header.classList.add("is-open");
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("nav-open");
     }
 
     function updateHeader() {
@@ -20,8 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
     updateHeader();
 
     toggle.addEventListener("click", function () {
-        var isOpen = header.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        if (header.classList.contains("is-open")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
 
     nav.addEventListener("click", function (event) {
